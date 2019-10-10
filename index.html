@@ -11955,6 +11955,18 @@
         body {
             height: 100%
         }
+
+        .text-success{
+             font-size:100px;
+        }
+
+        .text-warning {
+            font-size: 80px;
+        }
+
+        .text-danger {
+            font-size: 60px;
+        }
     </style>
 </head>
 <body onload="init()">
@@ -11966,9 +11978,9 @@
     </div>
 
     <script id="template" type="x-tmpl-mustache">
-        <h1 class="text-success">{{ currentText }}</h1>
-        <h3 class="text-warning">{{ currentSecond }}</h3>
-        <h6 class="text-danger">{{ nextSlide }}</h6>
+        <div class="text-success">{{ currentText }}</div>
+        <div class="text-warning">{{ currentSecond }}</div>
+        <div class="text-danger">{{ nextSlide }}</div>
     </script>
 </body>
 </html>
