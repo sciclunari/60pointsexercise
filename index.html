@@ -11940,7 +11940,14 @@
             loadTemplate();
             var rendered = Mustache.render(template, {currentSecond: data.preSlideTexts[0]});
             $('#target').html(rendered);
-            setTimeout(start, 3000);            
+            setTimeout(
+                function(){
+                var rendered = Mustache.render(template, {currentSecond: data.preSlideTexts[1]});
+            $('#target').html(rendered);
+                }
+                , 5000);   
+            
+            setTimeout(start, 10000);   
         }
         
         function start() {
