@@ -11856,6 +11856,11 @@
     <script>
         var data = {
             intervalLength: 15000,
+            preSlideTexts: [
+                "Morning Exercise #1: The 60 points",
+                "Place your attention on the following points. Feel the life and presence (sense) in each one of them."
+            ],
+            currentPreSlideIndex:0,
             slideTexts: [
                 "1. between the eyes",
                 "2. right eye",
@@ -11929,11 +11934,16 @@
             var rendered = Mustache.render(template, templateData);
             $('#target').html(rendered);
         }
-
+       
         
-
         function init() {
             loadTemplate();
+            var rendered = Mustache.render(template, {currentSecond: data.preSlideTexts[0]});
+            $('#target').html(rendered);
+            setTimeout(start, 3000);            
+        }
+        
+        function start() {
             loadNextSlide();
             renderTemplate();
 
@@ -11973,7 +11983,6 @@
             <div id="target">Loading...</div>
         </div>
     </div>
-
     <script id="template" type="x-tmpl-mustache">
         <div class="text-success">{{ currentText }}</div>
         <div class="text-warning">{{ currentSecond }}</div>
